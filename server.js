@@ -2,31 +2,39 @@
 const express = require('express');
 const requestIp = require('request-ip');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
+// enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
+// so that your API is remotely testable by FCC 
+var cors = require('cors');
+app.use(cors({optionSuccessStatus: 200}));  // some legacy browsers choke on 204
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get("/", (req, res) => {
+
+//show index page
+app.get("/", (req, res, next) => {
+  res.sendFile(__dirname + '/views/index.html');
+});
+
+app.get("/api/whoami", (req, res) => {
   var header = req.headers;
   console.log(header);
 
-  var os = header["user-agent"]
-  os = os.slice(  os.indexOf("(")+1, os.indexOf(")")  ); //"" due to hyphen
+  var sysInfo = header["user-agent"]
+  //os = os.slice(  os.indexOf("(")+1, os.indexOf(")")  ); //"" due to hyphen
 
   var language = header["accept-language"];
-  language = language.slice(  0, language.indexOf(",")  );
+  language = language.slice(  0, language.indexOf(";")  );
   
   const clientIp = requestIp.getClientIp(req);
   
   var result = {
     "IP address" : clientIp,
     "language": language,
-    "operating system": os
+    "system info": sysInfo
   };
   
   console.log(result);
@@ -34,7 +42,12 @@ app.get("/", (req, res) => {
   res.end();
 });
 
+// your first API endpoint... 
+app.get("/api/hello", function (req, res) {
+  res.json({greeting: 'hello API'});
+});
+
 // listen for requests :)
-var listener = app.listen(port, () => {
-  console.log('Your app is listening on port ' + listener.address().port);
+var listener = app.listen(port, function () {
+  console.log('Your app is listening on port ' +port);
 });
