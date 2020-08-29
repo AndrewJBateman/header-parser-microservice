@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
-// so that your API is remotely testable by FCC 
+// so that your API is remotely testable by FCC
 var cors = require('cors');
 app.use(cors({optionSuccessStatus: 200}));  // some legacy browsers choke on 204
 
@@ -14,40 +14,39 @@ app.use(express.static('public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
 
-//show index page
 app.get("/", (req, res, next) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
 app.get("/api/whoami", (req, res) => {
-  var header = req.headers;
-  console.log(header);
+  const header = req.headers;
+  console.log('header: ', header);
 
-  var sysInfo = header["user-agent"]
-  //os = os.slice(  os.indexOf("(")+1, os.indexOf(")")  ); //"" due to hyphen
+  const sysInfo = header["user-agent"]
 
-  var language = header["accept-language"];
+  let language = header["accept-language"];
   language = language.slice(  0, language.indexOf(";")  );
-  
+
+  const host = header["host"];
+
   const clientIp = requestIp.getClientIp(req);
-  
-  var result = {
+
+  const result = {
     "IP address" : clientIp,
     "language": language,
-    "system info": sysInfo
+    "system info": sysInfo,
+    "host": host
   };
-  
-  console.log(result);
+
+  console.log('result: ', result);
   res.send(result);
   res.end();
 });
 
-// your first API endpoint... 
 app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
-// listen for requests :)
-var listener = app.listen(port, function () {
+const listener = app.listen(port, function () {
   console.log('Your app is listening on port ' +port);
 });
