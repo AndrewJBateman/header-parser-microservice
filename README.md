@@ -1,6 +1,6 @@
 # :zap: Request Header Parser Microservice for freeCodeCamp
 
-* Extracts data from a http request header using the Node.js npm module `request-ip`
+* Parses data from a http request header using the Node.js npm module `request-ip`
 * This was part of the FreeCodeCamp exercises for Front End Certification
 
 **\* Note: to open web links in a new window use: _ctrl+click on link_**
@@ -8,22 +8,22 @@
 ## :page_facing_up: Table of contents
 
 * [:zap: Request Header Parser Microservice for freeCodeCamp](#zap-request-header-parser-microservice-for-freecodecamp)
-	* [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
-	* [:books: General info](#books-general-info)
-	* [:camera: Screenshots](#camera-screenshots)
-	* [:signal_strength: Technologies](#signal_strength-technologies)
-	* [:floppy_disk: Setup](#floppy_disk-setup)
-	* [:computer: Code Examples](#computer-code-examples)
-	* [:cool: Features](#cool-features)
-	* [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
-	* [:clap: Inspiration](#clap-inspiration)
-	* [:envelope: Contact](#envelope-contact)
+  * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
+  * [:books: General info](#books-general-info)
+  * [:camera: Screenshots](#camera-screenshots)
+  * [:signal_strength: Technologies](#signal_strength-technologies)
+  * [:floppy_disk: Setup](#floppy_disk-setup)
+  * [:computer: Code Examples](#computer-code-examples)
+  * [:cool: Features](#cool-features)
+  * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
+  * [:clap: Inspiration](#clap-inspiration)
+  * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
 
 * Original instructions (User Stories) from FCC:
 
-1. I can get the IP address, preferred languages (from header `Accept-Language`) and system infos (from header `User-Agent`) for my device.
+1. I can get the IP address, preferred languages (from header `Accept-Language`) and system info (from header `User-Agent`) for my device.
 
 * Returns `::1, when using IPv6`
 
@@ -81,7 +81,7 @@ app.get("/api/whoami", (req, res) => {
 ## :clipboard: Status & To-Do List
 
 * Status: Working
-* To-Do: nothing
+* To-Do: Nothing
 
 ## :clap: Inspiration
 
