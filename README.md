@@ -2,8 +2,12 @@
 
 * Parses data from a http request header using the Node.js npm module `request-ip`
 * This was part of the FreeCodeCamp exercises for Front End Certification
+* **Note:** to open web links in a new window use: _ctrl+click on link_
 
-**\* Note: to open web links in a new window use: _ctrl+click on link_**
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/header-parser-microservice?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/header-parser-microservice?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/header-parser-microservice?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/header-parser-microservice?style=plastic)
 
 ## :page_facing_up: Table of contents
 
@@ -17,6 +21,7 @@
   * [:cool: Features](#cool-features)
   * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
+  * [:file_folder: License](#file_folder-license)
   * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
@@ -33,7 +38,7 @@
 
 ## :signal_strength: Technologies
 
-* [Node v12](https://nodejs.org/en/) javaScript runtime built on Chrome's V8 JavaScript engine
+* [Node v14](https://nodejs.org/en/) javaScript runtime built on Chrome's V8 JavaScript engine
 * [Express v5](https://expressjs.com/) Fast, unopinionated, minimalist web framework for Node.js
 * [request-ip v2](https://www.npmjs.com/package/request-ip) node.js middleware for retrieving a request's IP address.
 * [Cors v2](https://www.npmjs.com/package/cors) node.js package for providing Connect/Express middleware that can be used to enable CORS with various options.
@@ -41,6 +46,7 @@
 ## :floppy_disk: Setup
 
 * Run `node server.js` for a dev server. Navigate to `http://localhost:8080/`.
+* Navigate to `http://localhost:8080/api/whoami` to see your system info.
 * The app will not automatically reload if you change any of the source files.
 
 ## :computer: Code Examples
@@ -69,8 +75,8 @@ app.get("/api/whoami", (req, res) => {
   };
 
   console.log('result: ', result);
+  res.send()
   res.send(result);
-  res.end();
 });
 ```
 
@@ -87,6 +93,10 @@ app.get("/api/whoami", (req, res) => {
 
 * [freeCodeCamp's APIs and Microservices Projects - File Metadata Microservice](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/request-header-parser-microservice)
 
+## :file_folder: License
+
+* This project is licensed under the terms of the MIT license.
+
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://www.andrewbateman.org) - you are welcome to [send me a message](https://andrewbateman.org/contact)
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
