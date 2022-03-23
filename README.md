@@ -1,6 +1,7 @@
 # :zap: Request Header Parser Microservice for freeCodeCamp
 
-* Parses data from a http request header using the Node.js npm module `request-ip`
+* Parses data from a HTTP request header using the Node.js npm module `request-ip`
+* `request-ip` was published 3 years ago so this is old code and does not actually return an ip address
 * This was part of the FreeCodeCamp exercises for Front End Certification
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
@@ -38,10 +39,10 @@
 
 ## :signal_strength: Technologies
 
-* [Node v14](https://nodejs.org/en/) javaScript runtime built on Chrome's V8 JavaScript engine
+* [Node v16](https://nodejs.org/en/) javaScript runtime built on Chrome's V8 JavaScript engine
 * [Express v5](https://expressjs.com/) Fast, unopinionated, minimalist web framework for Node.js
 * [request-ip v2](https://www.npmjs.com/package/request-ip) node.js middleware for retrieving a request's IP address.
-* [Cors v2](https://www.npmjs.com/package/cors) node.js package for providing Connect/Express middleware that can be used to enable CORS with various options.
+* [CORS v2](https://www.npmjs.com/package/cors) node.js package for providing Connect/Express middleware that can be used to enable CORS with various options.
 
 ## :floppy_disk: Setup
 
@@ -82,7 +83,7 @@ app.get("/api/whoami", (req, res) => {
 
 ## :cool: Features
 
-* nothing really cool about this, doesn't even return the full ip address & npm module has not been updated for 2 years. The [ipapi](https://ipapi.co/) API returns the user external ip address.
+* nothing cool about this, doesn't even return the full ip address & npm module has not been updated for 3 years. The [ipapi](https://ipapi.co/) API returns the user external ip address.
 
 ## :clipboard: Status & To-Do List
 
